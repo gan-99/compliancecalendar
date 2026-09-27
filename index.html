@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ComplianceCalendar.au — Every Australian business deadline and law change, in plain English</title>
+<meta name="description" content="A free, plain-English calendar of Australian business compliance deadlines, regulator changes and legislation in progress. Filter by state, industry and business size.">
+<link rel="stylesheet" href="styles.css">
+<script>try{if(localStorage.getItem('cc-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+</head>
+<body>
+<header class="hero">
+  <nav class="nav">
+    <a class="brand" href="/">Compliance<span>Calendar</span>.au</a>
+    <div class="nav-links">
+      <a href="#calendar">Calendar</a>
+      <a href="#legislation">Legislation</a>
+      <a href="#subscribe">Weekly digest</a>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">🌙 Dark</button>
+    </div>
+  </nav>
+  <div class="hero-inner">
+    <h1>Every deadline. Every law change. Plain English.</h1>
+    <p class="sub">Australian businesses get fined for deadlines nobody told them about.
+      This is the free calendar that tracks them — including laws still moving through Parliament.</p>
+    <form class="signup" id="subscribe" data-endpoint="">
+      <input type="email" name="email" placeholder="you@business.com.au" required>
+      <button type="submit">Get the weekly digest</button>
+    </form>
+    <p class="fineprint">One email a week. Unsubscribe in a click. Information, not legal advice.</p>
+  </div>
+</header>
+
+<main>
+  <section class="controls" id="calendar">
+    <div class="search-row">
+      <input type="search" id="q" placeholder="Search obligations, laws, regulators…">
+      <select id="jurisdiction">
+        <option value="">All jurisdictions</option>
+        <option>Cth</option><option>NSW</option><option>VIC</option><option>QLD</option>
+        <option>WA</option><option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
+        <option>CA</option>
+      </select>
+      <select id="type">
+        <option value="">All types</option>
+        <option value="legislation">Legislation</option>
+        <option value="bill">Bill in Parliament</option>
+        <option value="regulation">Regulation</option>
+        <option value="deadline">Deadline</option>
+        <option value="consultation">Consultation</option>
+      </select>
+      <select id="window">
+        <option value="">Any date</option>
+        <option value="30">Next 30 days</option>
+        <option value="90">Next 90 days</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+      </select>
+    </div>
+    <div class="counts" id="counts"></div>
+  </section>
+
+  <section id="results" class="results"></section>
+
+  <section id="legislation" class="legend">
+    <h2>What's in the calendar</h2>
+    <ul>
+      <li><b>Deadlines</b> — dated obligations (BAS, super, payroll tax, renewals) with what to do.</li>
+      <li><b>Regulation</b> — rules and standards issued by regulators (ATO, ASIC, OAIC, ACCC, FWO, state regulators).</li>
+      <li><b>Legislation</b> — Acts passed but not yet commenced, with commencement dates.</li>
+      <li><b>Bills</b> — laws still moving through Parliament, flagged so you can prepare early.</li>
+      <li><b>Consultation</b> — open calls for comment where you can still influence the outcome.</li>
+    </ul>
+    <p class="method"><b>Method:</b> every entry links to the primary source (legislation register or regulator page).
+      We only publish dated, checkable items. Nothing here is legal advice.</p>
+  </section>
+</main>
+
+<footer>
+  <p>ComplianceCalendar.au · <a href="/about.html">About &amp; method</a> · Information only, not legal advice.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
